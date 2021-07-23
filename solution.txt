@@ -1,0 +1,203 @@
+ADMIN@DESKTOP-5N6MDLK MINGW64 ~
+$ cd Desktop/
+
+ADMIN@DESKTOP-5N6MDLK MINGW64 ~/Desktop
+$ mkdir assignment
+
+ADMIN@DESKTOP-5N6MDLK MINGW64 ~/Desktop
+$ cd assignment/
+
+ADMIN@DESKTOP-5N6MDLK MINGW64 ~/Desktop/assignment
+$ git init
+Initialized empty Git repository in C:/Users/ADMIN/Desktop/assignment/.git/
+
+ADMIN@DESKTOP-5N6MDLK MINGW64 ~/Desktop/assignment (master)
+$ notepad temp.txt
+
+ADMIN@DESKTOP-5N6MDLK MINGW64 ~/Desktop/assignment (master)
+$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        temp.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+ADMIN@DESKTOP-5N6MDLK MINGW64 ~/Desktop/assignment (master)
+$ git add temp.txt
+
+ADMIN@DESKTOP-5N6MDLK MINGW64 ~/Desktop/assignment (master)
+$ git commit -m "temp commited "
+[master (root-commit) c8a06b7] temp commited
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 temp.txt
+
+ADMIN@DESKTOP-5N6MDLK MINGW64 ~/Desktop/assignment (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+ADMIN@DESKTOP-5N6MDLK MINGW64 ~/Desktop/assignment (master)
+$ git log
+commit c8a06b727fe1d931474d90013fc2a954a6f4efd3 (HEAD -> master)
+Author: siddheshmahadik <siddheshmahadik58@gmail.com>
+Date:   Fri Jul 23 18:40:41 2021 +0530
+
+    temp commited
+
+ADMIN@DESKTOP-5N6MDLK MINGW64 ~/Desktop/assignment (master)
+$ git branch Dev
+
+ADMIN@DESKTOP-5N6MDLK MINGW64 ~/Desktop/assignment (master)
+$ git branch Test
+
+ADMIN@DESKTOP-5N6MDLK MINGW64 ~/Desktop/assignment (master)
+$ git switch Dev
+Switched to branch 'Dev'
+
+ADMIN@DESKTOP-5N6MDLK MINGW64 ~/Desktop/assignment (Dev)
+$ notepad one.txt
+
+ADMIN@DESKTOP-5N6MDLK MINGW64 ~/Desktop/assignment (Dev)
+$ git add one.txt
+
+ADMIN@DESKTOP-5N6MDLK MINGW64 ~/Desktop/assignment (Dev)
+$ git commit -m"1 file commited"
+[Dev 6cc1b4e] 1 file commited
+ 1 file changed, 1 insertion(+)
+ create mode 100644 one.txt
+
+ADMIN@DESKTOP-5N6MDLK MINGW64 ~/Desktop/assignment (Dev)
+$ git switch Test
+Switched to branch 'Test'
+
+ADMIN@DESKTOP-5N6MDLK MINGW64 ~/Desktop/assignment (Test)
+$ notepad two.txt
+
+ADMIN@DESKTOP-5N6MDLK MINGW64 ~/Desktop/assignment (Test)
+$ notepad three.txt
+
+ADMIN@DESKTOP-5N6MDLK MINGW64 ~/Desktop/assignment (Test)
+$ git add two.txt
+
+ADMIN@DESKTOP-5N6MDLK MINGW64 ~/Desktop/assignment (Test)
+$ git add three.txt
+
+ADMIN@DESKTOP-5N6MDLK MINGW64 ~/Desktop/assignment (Test)
+$ git commit -m "both file commited"
+[Test 943b294] both file commited
+ 2 files changed, 1 insertion(+)
+ create mode 100644 three.txt
+ create mode 100644 two.txt
+
+ADMIN@DESKTOP-5N6MDLK MINGW64 ~/Desktop/assignment (Test)
+$ git switch Dev
+Switched to branch 'Dev'
+
+ADMIN@DESKTOP-5N6MDLK MINGW64 ~/Desktop/assignment (Dev)
+$ ls
+one.txt  temp.txt
+
+ADMIN@DESKTOP-5N6MDLK MINGW64 ~/Desktop/assignment (Dev)
+$ notepad one.txt
+
+ADMIN@DESKTOP-5N6MDLK MINGW64 ~/Desktop/assignment (Dev)
+$ git diff
+diff --git a/one.txt b/one.txt
+index 88dbf42..e47d5b3 100644
+--- a/one.txt
++++ b/one.txt
+@@ -1 +1 @@
+-1st File
+\ No newline at end of file
++1st File Modified
+\ No newline at end of file
+
+ADMIN@DESKTOP-5N6MDLK MINGW64 ~/Desktop/assignment (Dev)
+$ git add one.txt
+
+ADMIN@DESKTOP-5N6MDLK MINGW64 ~/Desktop/assignment (Dev)
+$ git commit -m "one.txt file modified"
+[Dev 22566e0] one.txt file modified
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+ADMIN@DESKTOP-5N6MDLK MINGW64 ~/Desktop/assignment (Dev)
+$ git merge Test
+Merge made by the 'recursive' strategy.
+ three.txt | 1 +
+ two.txt   | 0
+ 2 files changed, 1 insertion(+)
+ create mode 100644 three.txt
+ create mode 100644 two.txt
+
+ADMIN@DESKTOP-5N6MDLK MINGW64 ~/Desktop/assignment (Dev)
+$ git switch master
+Switched to branch 'master'
+
+ADMIN@DESKTOP-5N6MDLK MINGW64 ~/Desktop/assignment (master)
+$ git merge Dev
+Updating c8a06b7..f79adea
+Fast-forward
+ one.txt   | 1 +
+ three.txt | 1 +
+ two.txt   | 0
+ 3 files changed, 2 insertions(+)
+ create mode 100644 one.txt
+ create mode 100644 three.txt
+ create mode 100644 two.txt
+
+ADMIN@DESKTOP-5N6MDLK MINGW64 ~/Desktop/assignment (master)
+$ git remote add origin https://github.com/siddhesh58/assessment1.git
+
+ADMIN@DESKTOP-5N6MDLK MINGW64 ~/Desktop/assignment (master)
+$ git branch -M main
+
+ADMIN@DESKTOP-5N6MDLK MINGW64 ~/Desktop/assignment (main)
+$ git push -u origin main
+Enumerating objects: 14, done.
+Counting objects: 100% (14/14), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (9/9), done.
+Writing objects: 100% (14/14), 1.07 KiB | 550.00 KiB/s, done.
+Total 14 (delta 3), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (3/3), done.
+To https://github.com/siddhesh58/assessment1.git
+ * [new branch]      main -> main
+Branch 'main' set up to track remote branch 'main' from 'origin'.
+
+ADMIN@DESKTOP-5N6MDLK MINGW64 ~/Desktop/assignment (main)
+$ cd ..
+
+ADMIN@DESKTOP-5N6MDLK MINGW64 ~/Desktop
+$ mkdir clone_repo
+
+ADMIN@DESKTOP-5N6MDLK MINGW64 ~/Desktop
+$ cd clone_repo/
+
+ADMIN@DESKTOP-5N6MDLK MINGW64 ~/Desktop/clone_repo
+$ git clone https://github.com/siddhesh58/assessment1.git
+Cloning into 'assessment1'...
+remote: Enumerating objects: 14, done.
+remote: Counting objects: 100% (14/14), done.
+remote: Compressing objects: 100% (6/6), done.
+remote: Total 14 (delta 3), reused 14 (delta 3), pack-reused 0
+Receiving objects: 100% (14/14), done.
+Resolving deltas: 100% (3/3), done.
+
+ADMIN@DESKTOP-5N6MDLK MINGW64 ~/Desktop/clone_repo
+$ ls
+assessment1/
+
+ADMIN@DESKTOP-5N6MDLK MINGW64 ~/Desktop/clone_repo
+$ cd assessment1/
+
+ADMIN@DESKTOP-5N6MDLK MINGW64 ~/Desktop/clone_repo/assessment1 (main)
+$ ls
+one.txt  temp.txt  three.txt  two.txt
+
+ADMIN@DESKTOP-5N6MDLK MINGW64 ~/Desktop/clone_repo/assessment1 (main)
+$ notepad solution.txt
+
